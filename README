@@ -1,0 +1,20 @@
+mvn clean test -Dselenide.browser=chrome
+
+
+### ALLURE ###
+To run tests and generate Allure report:
+run mvn clean test
+
+To access the report manually:
+Generate the report by running: mvn allure:report
+
+Use an HTTP server to expose the content of target/site/allure-maven-plugin/
+In Intellij IDEA, you can access the report by opening target/site/allure-maven-plugin/index.html in the Web Browser.
+
+To access the report automatically:
+To Generate and open the report in your default browser at:
+
+Random port, run: mvn allure:serve
+Specific port, run: mvn allure:serve -Dallure.serve.port={your_port}
+
+mvn allure serve ./target/allure-results

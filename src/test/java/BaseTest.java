@@ -13,11 +13,6 @@ public class BaseTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://google.com";
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
-//                .screenshots(true)
-//                .savePageSource(true)
-//        );
-
     }
 
     @BeforeEach

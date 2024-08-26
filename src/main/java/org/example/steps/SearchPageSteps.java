@@ -1,7 +1,7 @@
 package org.example.steps;
 
 //import io.qameta.allure.Attachment;
-import io.qameta.allure.Step;
+//import io.qameta.allure.Step;
 import org.example.pages.SearchPage;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -14,23 +14,23 @@ public class SearchPageSteps {
         atPage = page;
     }
 
-    @Step
+//    @Step
     public void openSearchPage() {
         atPage.openSearchPage();
     }
 
-    @Step
+//    @Step
     public void verifyGoogleLogoIsDisplayed() {
         atPage.getGoogleLogo().shouldBe(visible);
     }
 
-    @Step
+//    @Step
 //    @Attachment(value = "Screenshot")
     public void fillInSearchField(String value) {
         atPage.fillInSearchField(value);
     }
 
-    @Step("Press Enter Button to perform searching")
+//    @Step("Press Enter Button to perform searching")
     public void pressEnterToSearch() {
         atPage.pressEnterToSearch();
     }

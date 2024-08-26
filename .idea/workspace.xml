@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d0c2472-6f18-44a8-88ca-fe4f47a26241" name="Changes" comment="" />
+    <list default="true" id="8d0c2472-6f18-44a8-88ca-fe4f47a26241" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/steps/SearchPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/steps/SearchPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/steps/SearchResultPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/steps/SearchResultPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MyFirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MyFirstTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MySecondTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MySecondTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/0391cf07-0ae3-4a06-a4af-9ab48f54c63a-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/5b274c80-56cf-4a35-a247-9d72a3344790-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/7cc135ce-2e9d-404e-978e-e2cdec591858-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/9e4eda45-1f56-4e07-a895-75a03ad6ec70-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/b3b56203-e473-45c0-8fb1-b5c9caabeccd-container.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/allure-results/bcc45e14-9b16-4b26-9de8-569ffbf7b62f-result.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/MyFirstTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/MyFirstTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/MySecondTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/MySecondTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-MyFirstTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-MyFirstTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-MySecondTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-MySecondTest.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2kMkIDb1MB1WulDciHOtSHZynLa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,6 +43,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.selenide-web-test [clean].executor": "Run",
+    "Maven.selenide-web-test [compile].executor": "Run",
+    "Maven.selenide-web-test [test].executor": "Run",
+    "Maven.selenide-web-test [validate].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test"

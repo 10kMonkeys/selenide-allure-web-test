@@ -5,6 +5,7 @@ target/
 target/classes/
 target/maven-status/
 target/surefire-reports/
+build/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

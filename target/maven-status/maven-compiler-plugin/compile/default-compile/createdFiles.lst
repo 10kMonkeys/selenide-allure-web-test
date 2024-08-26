@@ -1,8 +1,0 @@
-org/example/PropertyReader.class
-org/example/steps/SearchResultPageSteps.class
-org/example/steps/SearchPageSteps.class
-org/example/pages/SearchPage.class
-org/example/common/PageProvider.class
-org/example/pages/SearchResultPage.class
-org/example/steps/UserSteps.class
-org/example/pages/BasePage.class

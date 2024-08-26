@@ -1,8 +1,0 @@
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/PropertyReader.java
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/common/PageProvider.java
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/pages/BasePage.java
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/pages/SearchPage.java
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/pages/SearchResultPage.java
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/steps/SearchPageSteps.java
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/steps/SearchResultPageSteps.java
-/Users/aliaksei/Documents/ProjectTemplates/selenide-allure-web-test/src/main/java/org/example/steps/UserSteps.java

@@ -8,4 +8,9 @@ public class PageTitles {
 
     // </editor-fold>
 
+    // <editor-fold desc="Contact Us Page">
+
+    public static final String CONTACT_US_THANKS_MSG = "Thank You for your Message!";
+
+    // </editor-fold>
 }

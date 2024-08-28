@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class HomePage extends BasePage {
 
-    private SelenideElement homePageTitle = $(byId("nav-title"));
+    private final SelenideElement homePageTitle = $(byId("nav-title"));
 
     public void openHomePage() {
         openPage(PageURLs.HOME_PAGE_URL);

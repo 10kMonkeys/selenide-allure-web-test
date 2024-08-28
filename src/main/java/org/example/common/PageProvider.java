@@ -1,6 +1,6 @@
 package org.example.common;
 
-public class PageProvider {
+public class PageProvider { // TODO update
 
     public <T> T initPage(Class<T> page) {
         T object = null;

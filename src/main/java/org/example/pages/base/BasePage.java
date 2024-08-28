@@ -1,4 +1,4 @@
-package org.example.pages;
+package org.example.pages.base;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;

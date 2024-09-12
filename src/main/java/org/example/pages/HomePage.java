@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class HomePage extends BasePage {
 
     private final SelenideElement homePageTitle = $(byId("nav-title"));
+    private final SelenideElement iFrameTitle = $(byId("iframe"));
 
     public void openHomePage() {
         openPage(PageURLs.HOME_PAGE_URL);
@@ -17,5 +18,9 @@ public class HomePage extends BasePage {
 
     public SelenideElement getHomePageTitle() {
         return homePageTitle;
+    }
+
+    public void clickOnIFrameTitle() {
+        iFrameTitle.click();
     }
 }

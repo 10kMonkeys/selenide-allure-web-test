@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import org.example.data.page.PageTitles;
 import org.example.data.page.PageURLs;
 import org.example.pages.HomePage;
+import org.example.utils.BrowserHelper;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
@@ -35,5 +36,11 @@ public class HomePageSteps {
 
     private void verifyHomePageTitle() {
         atPage.getHomePageTitle().shouldBe(visible).shouldHave(exactText(PageTitles.HOME_PAGE_TITLE));
+    }
+
+    @Step("Click on iFrame title")
+    public void clickOnIFrameTitle() {
+        atPage.clickOnIFrameTitle();
+        BrowserHelper.switchToNewBrowserTab();
     }
 }

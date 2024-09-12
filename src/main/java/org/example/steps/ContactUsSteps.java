@@ -4,14 +4,13 @@ import io.qameta.allure.Step;
 import org.example.data.model.ContactUsMessage;
 import org.example.pages.ContactUsPage;
 
-import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.exactValue;
 
-public class ContactUsPageSteps {
+public class ContactUsSteps {
 
     ContactUsPage atPage;
 
-    public ContactUsPageSteps(ContactUsPage page) {
+    public ContactUsSteps(ContactUsPage page) {
         atPage = page;
     }
 

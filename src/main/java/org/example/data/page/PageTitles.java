@@ -13,4 +13,12 @@ public class PageTitles {
     public static final String CONTACT_US_THANKS_MSG = "Thank You for your Message!";
 
     // </editor-fold>
+
+    // <editor-fold desc="Home Page">
+
+    public static final String IFRAME_PAGE_TITLE = "WebdriverUniversity.com (IFrame)";
+
+    // </editor-fold>
+
+
 }

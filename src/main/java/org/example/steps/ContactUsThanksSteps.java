@@ -10,11 +10,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 
-public class ContactUsThanksPageSteps {
+public class ContactUsThanksSteps {
 
     ContactUsThanksPage atPage;
 
-    public ContactUsThanksPageSteps(ContactUsThanksPage page) {
+    public ContactUsThanksSteps(ContactUsThanksPage page) {
         atPage = page;
     }
 

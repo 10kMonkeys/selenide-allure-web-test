@@ -1,2 +1,35 @@
-mvn clean test -Dselenide.browser=chrome
-mvn allure serve ./target/allure-results
+
+****** MAVEN TEST RUN CMD******
+
+mvn clean test "-Dselenide.browser=firefox" "-Dgroups=one, two" "-Dsurefire.parallel=classes" "-Dsurefire.threadCount=2"
+
+mvn test -Djunit.jupiter.tags=one,two
+
+-Dselenide.browser=chrome
+-Dselenide.browserVersion=120
+-Dselenide.headless=true
+-Dgroups=one, two
+
+mvn test -Dsurefire.forkCount=2 -Dsurefire.parallel=classes -Dsurefire.threadCount=2
+-Dsurefire.forkCount=2 // separate JVM
+-Dsurefire.threadCount=2 // separate threads in one JVM with common statics, drivers etc.
+
+****** ALLURE CMD ******
+
+allure generate target/allure-results -o target/allure-report --clean
+allure serve ./target/allure-results
+
+****** SELENIDE PROPERTIES ******
+
+selenide properties:
+selenide.browser=chrome
+
+=========== TODO ==========
+- parallel testing fork + threads
+
+
+
+chromeoptions.args=--headless=new,--no-sandbox,--disable-dev-shm-usage,--disable-gpu,--remote-allow-origins=*
+
+
+selenide-allure-web-test-test-run

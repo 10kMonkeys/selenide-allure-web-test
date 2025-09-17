@@ -1,0 +1,40 @@
+services:
+  # --- Selenoid ---
+  selenoid:
+    image: aerokube/selenoid:latest
+    network_mode: bridge
+    container_name: selenoid
+    restart: always
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./config/:/etc/selenoid/:ro"   # тут лежит твой browsers.json
+    ports:
+      - "4444:4444"
+  #    command: ["-limit", "4", "-conf", "/etc/selenoid/browsers.json"]
+
+  # --- Selenoid UI ---
+  selenoid-ui:
+    image: aerokube/selenoid-ui:latest
+    network_mode: bridge
+    container_name: selenoid-ui
+    restart: always
+    links:
+      - selenoid
+    ports:
+      - "8080:8080"
+    command: ["--selenoid-uri", "http://selenoid:4444"]
+
+  # --- Тесты ---
+  test-run:
+    network_mode: bridge
+    build:
+      context: .
+      dockerfile: Dockerfile   # твой Dockerfile с Maven + Java 21
+    container_name: tests
+    working_dir: /usr/src/app  # директория с проектом внутри контейнера
+    volumes:
+      - ./:/usr/src/app        # монтируем твой проект (pom.xml, src/...) внутрь контейнера
+    links:
+      - selenoid
+    depends_on:
+      - selenoid

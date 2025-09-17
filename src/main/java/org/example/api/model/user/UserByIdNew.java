@@ -1,0 +1,28 @@
+package org.example.api.model.user;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
+@Data
+public class UserByIdNew {
+
+    private User data;
+    private Support support;
+
+    @Data
+    public static class User {
+        private int id;
+        private String email;
+        @JsonProperty("first_name")
+        private String firstName;
+        @JsonProperty("last_name")
+        private String lastName;
+        private String avatar;
+    }
+
+    @Data
+    public static class Support {
+        private String url;
+        private String text;
+    }
+}

@@ -17,13 +17,15 @@
         <assured.version>5.5.6</assured.version>
         <jackson.version>2.19.2</jackson.version>
         <lombok.version>1.18.38</lombok.version>
+        <appium.version>10.0.0</appium.version>
+        <selenide.version>7.10.1</selenide.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>7.4.2</version>
+            <version>${selenide.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -123,6 +125,18 @@
             <groupId>org.wiremock</groupId>
             <artifactId>wiremock-standalone</artifactId>
             <version>3.13.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Selenide-Appium -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide-appium</artifactId>
+            <version>${selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${appium.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

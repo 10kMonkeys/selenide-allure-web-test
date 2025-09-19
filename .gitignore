@@ -6,6 +6,8 @@ target/classes/
 target/maven-status/
 target/surefire-reports/
 build/
+docker-results/
+allure-report/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

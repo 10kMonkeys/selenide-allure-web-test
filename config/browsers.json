@@ -8,6 +8,7 @@
         "path": "/",
         "preloaded": true,
         "preload": 1,
+        "startupTimeout": "120s",
         "env" : ["LANG=ru_RU.UTF-8", "LANGUAGE=ru:en", "LC_ALL=ru_RU.UTF-8"]
       }
     }
@@ -22,6 +23,7 @@
         "path": "/wd/hub",
         "preloaded": true,
         "preload": 1,
+        "startupTimeout": "120s",
         "env" : ["LANG=ru_RU.UTF-8", "LANGUAGE=ru:en", "LC_ALL=ru_RU.UTF-8"]
       }
     }

@@ -1,9 +1,6 @@
 package org.example.common.data.constant;
 
 public class PageURL {
-
-    public static final String BASE_URL = "https://webdriveruniversity.com";
-
     public static final String HOME_PAGE_URL = "/";
     public static final String CONTACT_US_PAGE_URL = "/Contact-Us/contactus.html";
     public static final String CONTACT_US_THANKS_PAGE_URL = "/Contact-Us/contact-form-thank-you.html";

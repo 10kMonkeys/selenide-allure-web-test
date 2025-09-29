@@ -2,11 +2,11 @@ package org.example.api.client;
 
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.example.api.data.EndPont;
-import org.example.api.model.user.User;
-import org.example.api.model.user.UserById;
-import org.example.api.model.user.UserList;
-import org.example.api.model.user.UserUpdate;
+import org.example.api.data.EndPointData;
+import org.example.api.dto.user.UserDto;
+import org.example.api.dto.user.UserByIdDto;
+import org.example.api.dto.user.UserListDto;
+import org.example.api.dto.user.UserUpdate;
 
 import static io.restassured.RestAssured.given;
 
@@ -19,39 +19,39 @@ public class UserClient {
         REQUEST_SPEC = requestSpec;
     }
 
-    public UserList getUsersApi() {
+    public UserListDto getUsersApi() {
         return given()
                     .spec(REQUEST_SPEC)
 //                    .log().all()
                 .when()
-                    .get(EndPont.GET_USERS)
+                    .get(EndPointData.GET_USERS)
                 .then()
-//                  .log().all()
+//                    .log().all()
                     .statusCode(200)
                     .extract()
-                    .as(UserList.class);
+                    .as(UserListDto.class);
     }
 
-    public UserById getUserApi(int id) {
+    public UserByIdDto getUserApi(int id) {
         return given()
                     .spec(REQUEST_SPEC)
 //                    .log().all()
                 .when()
-                    .get(EndPont.userById(id))
+                    .get(EndPointData.userById(id))
                 .then()
 //                    .log().all()
                     .statusCode(200)
                     .extract()
-                    .as(UserById.class);
+                    .as(UserByIdDto.class);
     }
 
-    public UserUpdate putUserApi(User user, int id) {
+    public UserUpdate putUserApi(UserDto user, int id) {
         return given()
                     .spec(REQUEST_SPEC)
                     .body(user)
 //                    .log().all()
                 .when()
-                    .put(EndPont.userById(id))
+                    .put(EndPointData.userById(id))
                 .then()
 //                    .log().all()
                     .statusCode(200)
@@ -64,20 +64,20 @@ public class UserClient {
                     .spec(REQUEST_SPEC)
 //                    .log().all()
                 .when()
-                    .delete(EndPont.userById(id))
+                    .delete(EndPointData.userById(id))
                 .then()
 //                    .log().all()
                     .statusCode(204)
                     .extract().response();
     }
 
-    public UserUpdate patchUserApi(User user, int id) {
+    public UserUpdate patchUserApi(UserDto user, int id) {
         return given()
                     .spec(REQUEST_SPEC)
                     .body(user)
 //                    .log().all()
                 .when()
-                    .patch(EndPont.userById(id))
+                    .patch(EndPointData.userById(id))
                 .then()
 //                    .log().all()
                     .statusCode(200)

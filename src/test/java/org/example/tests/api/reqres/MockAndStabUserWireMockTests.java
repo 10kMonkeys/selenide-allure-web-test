@@ -2,14 +2,11 @@ package org.example.tests.api.reqres;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
-import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import io.restassured.RestAssured;
 import lombok.SneakyThrows;
-import org.example.api.model.user.UserUpdate;
+import org.example.api.dto.user.UserUpdate;
 import org.example.tests.api.base.BaseTestApi;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;

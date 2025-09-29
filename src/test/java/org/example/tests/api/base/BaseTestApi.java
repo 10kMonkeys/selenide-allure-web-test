@@ -12,7 +12,7 @@ public class BaseTestApi {
 
     @BeforeAll
     static void setUp() {
-        RestAssured.baseURI = "https://reqres.in";
+        RestAssured.baseURI = "https://reqres.in"; // TODO use TestConfig BaseURL in real project
 
         requestSpec = new RequestSpecBuilder()
                 .addQueryParam("api_key", "reqres-free-v1")

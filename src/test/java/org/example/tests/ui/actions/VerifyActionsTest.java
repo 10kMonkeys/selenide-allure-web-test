@@ -15,7 +15,6 @@ public class VerifyActionsTest extends BaseTest {
     @Tags({
             @Tag("one"),
             @Tag("three"),
-            @Tag("docker")
     })
     @Test
     @Epic("Webdriver University")

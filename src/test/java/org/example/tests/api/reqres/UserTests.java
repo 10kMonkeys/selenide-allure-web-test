@@ -1,6 +1,6 @@
 package org.example.tests.api.reqres;
 
-import org.example.api.model.user.User;
+import org.example.api.dto.user.UserDto;
 import org.example.api.steps.UserSteps;
 import org.example.tests.api.base.BaseTestApi;
 import org.junit.jupiter.api.Tag;
@@ -24,7 +24,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
         assertEquals(12, getUserListResponse.getTotal());
         assertEquals(2, getUserListResponse.getTotalPages());
 
-        User user = getUserListResponse.getData().getFirst();
+        UserDto user = getUserListResponse.getData().getFirst();
         assertEquals(1, user.getId());
         assertEquals("george.bluth@reqres.in", user.getEmail());
         assertEquals("George", user.getFirstName());
@@ -46,7 +46,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
 
     @Test
     public void verifyPutUserByIdTest() {
-        User user = new User(20);
+        UserDto user = new UserDto(20);
 
         var putUserByIdResponse = steps.putUserById(user, 1);
 
@@ -60,7 +60,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
 
     @Test
     public void verifyPatchUserByIdTest() {
-        User user = new User(1);
+        UserDto user = new UserDto(1);
 
         var patchUserByIdResponse = steps.patchUserById(user, 1);
 

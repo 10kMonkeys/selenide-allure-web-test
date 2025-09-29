@@ -29,7 +29,30 @@ selenide.browser=chrome
 
 
 
+
 chromeoptions.args=--headless=new,--no-sandbox,--disable-dev-shm-usage,--disable-gpu,--remote-allow-origins=*
 
 
 selenide-allure-web-test-test-run
+
+
+======================== TEST RUN ========================
+
+################ APPIUM ################
+
+appium --keep-alive-timeout 800 --use-plugins=device-farm --base-path /wd/hub /wd/hub --plugin-device-farm-platform=android --allow-insecure=*:adb_shell
+appium --ka 800 --use-plugins=device-farm --pa /wd/hub /wd/hub --plugin-device-farm-platform=android --allow-insecure=*:adb_shell
+
+################ WEB LOCAL ################
+mvn clean test "-Dgroups=one, two" "-Dplatform=web" "-Dbrowser=firefox"
+
+################ WEB DOCKER ################
+docker compose up -d
+docker-compose run --rm test-run mvn clean test "-Dgroups=one, two" "-Denv=docker" "-Dplatform=web" "-Dbrowser=firefox"
+docker compose down
+
+################ MOBILE WEB LOCAL ################
+mvn clean test "-Dgroups=one, two" "-Dplatform=mobile_web" "-Denv=local" "-Dos=android" "-Ddevice=pixel_9_pro"
+
+################ MOBILE WEB LOCAL ################
+mvn clean test "-Dgroups=one, two" "-Dplatform=mobile_native" "-Denv=local" "-Dos=android" "-Ddevice=pixel_9_pro"

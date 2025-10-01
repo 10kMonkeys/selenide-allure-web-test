@@ -20,9 +20,6 @@ public class IosMobileDriver implements WebDriverProvider {
 //                .withBrowserName("Safari")
                 .noReset();
 
-        options.setCapability("unicodeKeyboard", true);
-        options.setCapability("resetKeyboard", true);
-        options.setCapability("autoGrantPermissions", true);
         options.setCapability("autoAcceptAlerts", true);
 
 

@@ -25,11 +25,11 @@ public class TestConfig {
     private static String getBaseUrl() {
         switch (BACKEND_ENV) {
             case DEV:
-                return "https://webdriveruniversity.com/";
+                return "https://webdriveruniversity.com";
             case STAGE:
-                return "https://webdriveruniversity2.com/";
+                return "https://webdriveruniversity2.com";
             case PROD:
-                return "https://webdriveruniversity3.com/";
+                return "https://webdriveruniversity3.com";
             default:
                 throw new IllegalArgumentException("Unknown env: " + BACKEND_ENV);
         }

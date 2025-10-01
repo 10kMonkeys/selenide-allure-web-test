@@ -9,9 +9,9 @@ public class WebDriverFactory {
         var env = TestConfig.ENVIRONMENT;
 
         switch (env) {
-            case LOCAL: // selenide works automatically
+            case LOCAL: break; // selenide works automatically
             case DOCKER: Configuration.remote = "http://selenoid:4444/wd/hub"; break;
-            case BROWSERSTACK: // TODO implement if will be needed
+            case BROWSERSTACK: break; // TODO implement if will be needed
             default:
                 throw new IllegalArgumentException("Unsupported web environment: " + env);
         }

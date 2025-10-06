@@ -1,14 +1,12 @@
 package org.example.common.driver.config;
 
-import org.example.common.driver.enums.BackendEnvType;
-import org.example.common.driver.enums.EnvironmentType;
-import org.example.common.driver.enums.PlatformType;
+import org.example.common.driver.enums.*;
 
-public class TestConfig {
+public class TestConfig { // TODO variables, constructor and only method to resolve config
 
     public static final PlatformType PLATFORM = System.getProperty("platform") == null ?
-                PlatformType.valueOf(System.getProperty("platform", "MOBILE_WEB").toUpperCase()) :
-                PlatformType.valueOf(System.getProperty("platform").toUpperCase());
+            PlatformType.valueOf(System.getProperty("platform", "MOBILE_NATIVE").toUpperCase()) :
+            PlatformType.valueOf(System.getProperty("platform").toUpperCase());
 
     public static final EnvironmentType ENVIRONMENT = System.getProperty("env") == null ?
             EnvironmentType.valueOf(System.getProperty("env", "LOCAL").toUpperCase()) :
@@ -18,7 +16,15 @@ public class TestConfig {
             BackendEnvType.valueOf(System.getProperty("backendEnv", "DEV").toUpperCase()) :
             BackendEnvType.valueOf(System.getProperty("backendEnv").toUpperCase());
 
-    public static final String DEVICE = System.getProperty("device", ""); // TODO add enum?
+    public static final OsType OS = System.getProperty("os") == null ?
+            OsType.valueOf(System.getProperty("os", "ANDROID").toUpperCase()) :
+            OsType.valueOf(System.getProperty("os").toUpperCase());
+
+    public static final MobileDeviceType DEVICE = System.getProperty("device") == null ?
+            MobileDeviceType.valueOf(System.getProperty("device", "PIXEL_9_PRO").toUpperCase()) :
+            MobileDeviceType.valueOf(System.getProperty("device").toUpperCase());
+
+//    public static final String DEVICE = System.getProperty("device", ""); // TODO add enum?
 
     public static final String BASE_URL = getBaseUrl();
 

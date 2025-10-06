@@ -1,10 +1,10 @@
 package org.example.common.driver.driver;
 
 import com.codeborne.selenide.WebDriverProvider;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -16,15 +16,14 @@ public class IosMobileDriver implements WebDriverProvider {
                 .merge(capabilities)
                 .setPlatformName("iOS")
 //                .setDeviceName("iPhone 15 Pro")
-                .setAutomationName("XCUITest")
+                .setAutomationName("XCUITest");
 //                .withBrowserName("Safari")
-                .noReset();
+//                .noReset();
 
         options.setCapability("autoAcceptAlerts", true);
 
-
         try {
-            return new RemoteWebDriver(new URL("http://127.0.0.1:4723"), options);
+            return new IOSDriver(new URL("http://127.0.0.1:4723"), options);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

@@ -5,7 +5,7 @@ import org.example.common.driver.enums.*;
 public class TestConfig { // TODO variables, constructor and only method to resolve config
 
     public static final PlatformType PLATFORM = System.getProperty("platform") == null ?
-            PlatformType.valueOf(System.getProperty("platform", "MOBILE_NATIVE").toUpperCase()) :
+            PlatformType.valueOf(System.getProperty("platform", "MOBILE_WEB").toUpperCase()) :
             PlatformType.valueOf(System.getProperty("platform").toUpperCase());
 
     public static final EnvironmentType ENVIRONMENT = System.getProperty("env") == null ?
@@ -23,8 +23,6 @@ public class TestConfig { // TODO variables, constructor and only method to reso
     public static final MobileDeviceType DEVICE = System.getProperty("device") == null ?
             MobileDeviceType.valueOf(System.getProperty("device", "PIXEL_9_PRO").toUpperCase()) :
             MobileDeviceType.valueOf(System.getProperty("device").toUpperCase());
-
-//    public static final String DEVICE = System.getProperty("device", ""); // TODO add enum?
 
     public static final String BASE_URL = getBaseUrl();
 

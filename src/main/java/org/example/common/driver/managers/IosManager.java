@@ -6,10 +6,7 @@ import org.example.common.driver.driver.IosMobileDriver;
 
 public class IosManager {
 
-    BaseOptions<?> options;
-
     public IosManager(BaseOptions<?> options) {
-        this.options = options;
         Configuration.browserCapabilities = options;
         Configuration.browser = IosMobileDriver.class.getName();
     }

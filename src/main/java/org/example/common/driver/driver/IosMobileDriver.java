@@ -15,12 +15,7 @@ public class IosMobileDriver implements WebDriverProvider {
         XCUITestOptions options = new XCUITestOptions()
                 .merge(capabilities)
                 .setPlatformName("iOS")
-//                .setDeviceName("iPhone 15 Pro")
                 .setAutomationName("XCUITest");
-//                .withBrowserName("Safari")
-//                .noReset();
-
-        options.setCapability("autoAcceptAlerts", true);
 
         try {
             return new IOSDriver(new URL("http://127.0.0.1:4723"), options);

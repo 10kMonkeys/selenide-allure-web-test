@@ -145,6 +145,11 @@
             <version>10.0.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.browserstack</groupId>
+            <artifactId>browserstack-java-sdk</artifactId>
+            <version>LATEST</version>
+        </dependency>
     </dependencies>
 
     <build>

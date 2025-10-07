@@ -6,10 +6,7 @@ import org.example.common.driver.driver.AndroidMobileDriver;
 
 public class AndroidManager {
 
-    BaseOptions<?> options;
-
     public AndroidManager(BaseOptions<?> options) {
-        this.options = options;
         Configuration.browserCapabilities = options;
         Configuration.browser = AndroidMobileDriver.class.getName();
     }

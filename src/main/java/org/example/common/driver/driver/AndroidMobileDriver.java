@@ -20,7 +20,7 @@ public class AndroidMobileDriver implements WebDriverProvider  {
         options.setCapability("autoGrantPermissions", true);
 
         try {
-            return new AndroidDriver(new URL("http://hub.browserstack.com/wd/hub"), options);
+            return new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

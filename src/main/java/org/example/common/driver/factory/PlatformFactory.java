@@ -9,11 +9,10 @@ public class PlatformFactory {
         var platform = TestConfig.PLATFORM;
 
         switch (platform) {
-            case WEB: new WebDriverFactory().setup(); break;
-            case MOBILE_WEB: new MobileWebDriverFactory().setup(); break;
-            case MOBILE_NATIVE: new MobileNativeDriverFactory().setup(); break;
-            default:
-                throw new IllegalArgumentException("Unsupported platform: " + platform);
+            case WEB -> new WebPlatformFactory().setup();
+            case MOBILE_WEB -> new MobileWebPlatformFactory().setupMobilePlatform();
+            case MOBILE_NATIVE -> new MobileNativePlatformFactory().setupMobilePlatform();
+            default -> throw new IllegalArgumentException("Unsupported platform: " + platform);
         }
     }
 }

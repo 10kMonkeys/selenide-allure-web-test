@@ -5,7 +5,7 @@ import org.example.common.driver.enums.*;
 public class TestConfig { // TODO variables, constructor and only method to resolve config
 
     public static final PlatformType PLATFORM = System.getProperty("platform") == null ?
-            PlatformType.valueOf(System.getProperty("platform", "MOBILE_NATIVE").toUpperCase()) :
+            PlatformType.valueOf(System.getProperty("platform", "MOBILE_WEB").toUpperCase()) :
             PlatformType.valueOf(System.getProperty("platform").toUpperCase());
 
     public static final EnvironmentType ENVIRONMENT = System.getProperty("env") == null ?
@@ -13,7 +13,7 @@ public class TestConfig { // TODO variables, constructor and only method to reso
             EnvironmentType.valueOf(System.getProperty("env").toUpperCase());
 
     public static final BackendEnvType BACKEND_ENV = System.getProperty("backendEnv") == null ?
-            BackendEnvType.valueOf(System.getProperty("backendEnv", "PUPA").toUpperCase()) :
+            BackendEnvType.valueOf(System.getProperty("backendEnv", "DEV").toUpperCase()) :
             BackendEnvType.valueOf(System.getProperty("backendEnv").toUpperCase());
 
     public static final OsType OS = System.getProperty("os") == null ?

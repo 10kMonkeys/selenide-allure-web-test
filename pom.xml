@@ -150,6 +150,11 @@
             <artifactId>browserstack-java-sdk</artifactId>
             <version>LATEST</version>
         </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>LATEST</version>
+        </dependency>
     </dependencies>
 
     <build>

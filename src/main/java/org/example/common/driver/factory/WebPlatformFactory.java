@@ -11,6 +11,7 @@ public class WebPlatformFactory {
         switch (env) {
             case LOCAL -> {} // selenide works automatically
             case DOCKER -> Configuration.remote = "http://selenoid:4444/wd/hub";
+            case BROWSERSTACK -> Configuration.remote = "https://alexyarm_8vc6RF:gXVpV1dzsZjhr9mjBfpE@hub-cloud.browserstack.com/wd/hub";
             // TODO BROWSERSTACK implement if will be needed
             default -> throw new IllegalArgumentException("Unsupported web environment: " + env);
         }

@@ -5,7 +5,7 @@ import org.example.common.driver.enums.*;
 public class TestConfig { // TODO variables, constructor and only method to resolve config
 
     public static final PlatformType PLATFORM = System.getProperty("platform") == null ?
-            PlatformType.valueOf(System.getProperty("platform", "MOBILE_WEB").toUpperCase()) :
+            PlatformType.valueOf(System.getProperty("platform", "WEB").toUpperCase()) :
             PlatformType.valueOf(System.getProperty("platform").toUpperCase());
 
     public static final EnvironmentType ENVIRONMENT = System.getProperty("env") == null ?

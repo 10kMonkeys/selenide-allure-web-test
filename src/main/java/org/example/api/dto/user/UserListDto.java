@@ -20,4 +20,5 @@ public class UserListDto {
         private int totalPages;
         private List<UserDto> data;
         private SupportDto support;
+        private Object _meta;
 }

@@ -7,4 +7,5 @@ public class UserByIdDto {
 
     private UserDto data;
     private SupportDto support;
+    private Object _meta;
 }

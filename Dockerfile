@@ -16,3 +16,5 @@ COPY . .
 
 # Скачиваем зависимости
 RUN mvn dependency:go-offline -B
+
+CMD ["tail", "-f", "/dev/null"]

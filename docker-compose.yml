@@ -38,3 +38,4 @@ services:
       - selenoid
     depends_on:
       - selenoid
+    command: tail -f /dev/null

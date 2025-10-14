@@ -19,6 +19,19 @@ mvn test -Dsurefire.forkCount=2 -Dsurefire.parallel=classes -Dsurefire.threadCou
 allure generate target/allure-results -o target/allure-report --clean
 allure serve ./target/allure-results
 
+
+# Запуск тестов + генерация + открытие отчета
+mvn clean test allure:serve
+
+# 1. Запустить тесты
+mvn clean test
+
+# 2. Сгенерировать отчет
+mvn allure:report
+
+# 3. Открыть отчет в браузере
+mvn allure:serve
+
 ****** SELENIDE PROPERTIES ******
 
 selenide properties:
@@ -27,11 +40,7 @@ selenide.browser=chrome
 =========== TODO ==========
 - parallel testing fork + threads
 
-
-
-
 chromeoptions.args=--headless=new,--no-sandbox,--disable-dev-shm-usage,--disable-gpu,--remote-allow-origins=*
-
 
 selenide-allure-web-test-test-run
 
@@ -49,6 +58,7 @@ mvn clean test "-Dgroups=one, two" "-Dplatform=web" "-Dbrowser=firefox"
 ################ WEB DOCKER ################
 docker compose up -d
 docker-compose run --rm test-run mvn clean test "-Dgroups=one, two" "-Denv=docker" "-Dplatform=web" "-Dbrowser=firefox"
+docker-compose run --rm test-run mvn clean test "-Dgroups=one, two" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=firefox"
 docker compose down
 
 ################ MOBILE WEB LOCAL ################

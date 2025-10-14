@@ -7,7 +7,8 @@ target/maven-status/
 target/surefire-reports/
 build/
 docker-results/
-allure-report/
+
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -23,6 +24,7 @@ allure-report/
 *.iws
 *.iml
 *.ipr
+.allure
 
 ### Eclipse ###
 .apt_generated

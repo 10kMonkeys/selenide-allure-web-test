@@ -3,7 +3,7 @@ package org.example.ui.web.common.pages;
 import com.codeborne.selenide.SelenideElement;
 import org.example.common.data.constant.PageURL;
 import org.example.ui.web.common.pages.base.BasePage;
-import org.example.ui.utils.BrowserHelper;
+import org.example.common.utils.BrowserHelper;
 
 import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selectors.byXpath;

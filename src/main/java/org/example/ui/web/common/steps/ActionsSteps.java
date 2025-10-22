@@ -2,7 +2,7 @@ package org.example.ui.web.common.steps;
 
 import io.qameta.allure.Step;
 import org.example.ui.web.common.pages.ActionsPage;
-import org.example.ui.utils.ColorHelper;
+import org.example.common.utils.ColorHelper;
 
 import static com.codeborne.selenide.Condition.*;
 

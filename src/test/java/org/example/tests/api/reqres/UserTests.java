@@ -1,20 +1,33 @@
 package org.example.tests.api.reqres;
 
+import org.assertj.core.api.SoftAssertions;
+import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.example.api.dto.user.UserDto;
+import org.example.api.fixtures.UserFixtures;
 import org.example.api.steps.UserSteps;
 import org.example.tests.api.base.BaseTestApi;
+import org.instancio.Instancio;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Tag("apiTest")
+@ExtendWith(SoftAssertionsExtension.class)
 public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignoreUnknown = true) --- ignore fields
 
     private final UserSteps steps = new UserSteps(requestSpec);
 
     @Test
+    @Order(1)
 //    @RetryingTest(3) // TODO JUnit Pioneer
     public void verifyGetUserListTest() {
 
@@ -33,6 +46,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
     }
 
     @Test
+    @Order(3)
     public void verifyGetUserByIdTest() {
         var getUserByIdResponse = steps.getUserById(1);
 
@@ -44,21 +58,48 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
         assertEquals("https://reqres.in/img/faces/1-image.jpg", getUserByIdResponse.getAvatar());
     }
 
-    @Test
-    public void verifyPutUserByIdTest() {
-        UserDto user = new UserDto(20);
+    @Order(2)
+    @ParameterizedTest
+    @MethodSource("provideUserData")
+    public void verifyPutUserByIdTest(UserDto user5, SoftAssertions assertions) {
+        UserDto user = new UserDto(20); // constructor
 
-        var putUserByIdResponse = steps.putUserById(user, 1);
+        UserDto user2 = UserDto.builder() // lombok builder
+                .id(20)
+                .email("george.bluth@reqres.in")
+                .firstName("George")
+                .lastName("Bluth")
+                .avatar("https://reqres.in/img/faces/1-image.jpg")
+                .build();
 
-        assertEquals(20, putUserByIdResponse.getId());
-        assertEquals(user.getEmail(), putUserByIdResponse.getEmail());
-        assertEquals(user.getFirstName(), putUserByIdResponse.getFirstName());
-        assertEquals(user.getLastName(), putUserByIdResponse.getLastName());
-        assertEquals(user.getAvatar(), putUserByIdResponse.getAvatar());
-        assertThat(putUserByIdResponse.getUpdatedAt()).isNotNull();
+        UserDto user3 = UserFixtures.randomUser(); // lombok builder + faker
+
+        UserDto user4 = Instancio.create(UserDto.class); // instancio for random generation
+//
+        var putUserByIdResponse = steps.putUserById(user5, 1);
+
+//        SoftAssertions assertions = new SoftAssertions(); // no needed
+
+        assertions.assertThat(user5.getId()).isEqualTo(putUserByIdResponse.getId());
+        assertions.assertThat(user5.getEmail()).isEqualTo(putUserByIdResponse.getEmail());
+        assertions.assertThat(user5.getFirstName()).isEqualTo(putUserByIdResponse.getFirstName());
+        assertions.assertThat(user5.getLastName()).isEqualTo(putUserByIdResponse.getLastName());
+        assertions.assertThat(user5.getAvatar()).isEqualTo(putUserByIdResponse.getAvatar());
+        assertions.assertThat(putUserByIdResponse.getUpdatedAt()).isNotNull();
+
+//        assertions.assertAll();  // no needed
+    }
+
+    private static Stream<Arguments> provideUserData() {
+        return Stream.of(
+                Arguments.of(UserFixtures.randomUser()),
+                Arguments.of(UserFixtures.randomUser()),
+                Arguments.of(UserFixtures.randomUser())
+        );
     }
 
     @Test
+    @Order(4)
     public void verifyPatchUserByIdTest() {
         UserDto user = new UserDto(1);
 
@@ -73,6 +114,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
     }
 
     @Test
+    @Order(5)
     public void verifyDeleteUserByIdTest() {
         var deleteUserByIdResponse = steps.deleteUserById(1);
 

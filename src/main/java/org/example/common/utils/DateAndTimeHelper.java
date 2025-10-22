@@ -1,4 +1,4 @@
-package org.example.ui.utils;
+package org.example.common.utils;
 
 import org.example.common.data.constant.DateAndTimeFormat;
 

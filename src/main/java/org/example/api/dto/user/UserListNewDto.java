@@ -8,18 +8,18 @@ import java.util.List;
 @Data
 public class UserListNewDto {
 
-    private int page;
+    private Integer page;
     @JsonProperty("per_page")
-    private int perPage;
-    private int total;
+    private Integer perPage;
+    private Integer total;
     @JsonProperty("total_pages")
-    private int totalPages;
+    private Integer totalPages;
     private List<User> data;
     private Support support;
 
     @Data
     public static class User {
-        private int id;
+        private Integer id;
         private String email;
         @JsonProperty("first_name")
         private String firstName;

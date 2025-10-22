@@ -11,7 +11,7 @@ public class UserByIdNewDto {
 
     @Data
     public static class User {
-        private int id;
+        private Integer id;
         private String email;
         @JsonProperty("first_name")
         private String firstName;

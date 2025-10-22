@@ -1,4 +1,4 @@
-package org.example.ui.utils;
+package org.example.common.utils;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.AppiumDriver;

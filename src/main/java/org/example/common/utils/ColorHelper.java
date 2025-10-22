@@ -1,4 +1,4 @@
-package org.example.ui.utils;
+package org.example.common.utils;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.Color;

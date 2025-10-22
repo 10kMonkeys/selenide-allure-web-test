@@ -2,7 +2,7 @@ package org.example.ui.web.common.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.example.ui.web.common.pages.base.BasePage;
-import org.example.ui.utils.JavaScriptHelper;
+import org.example.common.utils.JavaScriptHelper;
 
 import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byId;

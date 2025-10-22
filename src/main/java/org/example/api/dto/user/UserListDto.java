@@ -12,12 +12,12 @@ import java.util.List;
 @AllArgsConstructor
 public class UserListDto {
 
-        private int page;
+        private Integer page;
         @JsonProperty("per_page")
-        private int perPage;
-        private int total;
+        private Integer perPage;
+        private Integer total;
         @JsonProperty("total_pages")
-        private int totalPages;
+        private Integer totalPages;
         private List<UserDto> data;
         private SupportDto support;
         private Object _meta;

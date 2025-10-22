@@ -1,4 +1,4 @@
-package org.example.ui.utils;
+package org.example.common.utils;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;

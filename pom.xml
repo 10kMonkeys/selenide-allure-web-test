@@ -19,6 +19,7 @@
         <lombok.version>1.18.38</lombok.version>
         <appium.version>10.0.0</appium.version>
         <selenide.version>7.10.1</selenide.version>
+        <jupiter.version>5.10.3</jupiter.version>
     </properties>
 
     <dependencies>
@@ -41,9 +42,15 @@
             <version>1.0.2</version>
         </dependency>
         <dependency>
+            <groupId>org.instancio</groupId>
+            <artifactId>instancio-junit</artifactId>
+            <version>5.5.1</version> <!-- 2024 год! -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.10.3</version>
+            <version>${jupiter.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -96,6 +103,12 @@
                     <version>${assured.version}</version>
                     <scope>compile</scope>
                 </dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.3.0</version>
+            <scope>test</scope>
+        </dependency>
         <!-- JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -165,6 +178,12 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

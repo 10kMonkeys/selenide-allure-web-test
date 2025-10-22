@@ -7,7 +7,7 @@ import org.example.ui.web.common.pages.DatePickerPage;
 import java.time.LocalDate;
 
 import static com.codeborne.selenide.Condition.exactValue;
-import static org.example.ui.utils.DateAndTimeHelper.getCertainDateOrPartInFormatString;
+import static org.example.common.utils.DateAndTimeHelper.getCertainDateOrPartInFormatString;
 
 public class DatePickerSteps {
 

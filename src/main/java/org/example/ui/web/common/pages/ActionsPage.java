@@ -3,7 +3,7 @@ package org.example.ui.web.common.pages;
 import com.codeborne.selenide.SelenideElement;
 
 import org.example.ui.web.common.pages.base.BasePage;
-import org.example.ui.utils.ActionHelper;
+import org.example.common.utils.ActionHelper;
 
 import static com.codeborne.selenide.DragAndDropOptions.to;
 import static com.codeborne.selenide.Selectors.*;

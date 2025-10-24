@@ -88,7 +88,7 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
             <version>${allure.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <!-- API -->
 <!--        <dependency>-->
@@ -107,7 +107,7 @@
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility</artifactId>
             <version>4.3.0</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <!-- JSON -->
         <dependency>

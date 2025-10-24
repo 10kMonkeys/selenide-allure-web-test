@@ -6,6 +6,7 @@ import com.github.tomakehurst.wiremock.junit5.WireMockExtension;
 import io.restassured.RestAssured;
 import lombok.SneakyThrows;
 import org.example.api.dto.user.UserUpdate;
+import org.example.api.specs.Specs;
 import org.example.tests.api.base.BaseTestApi;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -52,7 +53,7 @@ public class MockAndStabUserWireMockTests extends BaseTestApi {
 
         // Дёргаем стаб напрямую
         UserUpdate userResponse = RestAssured.given()
-                .spec(requestSpec)
+                .spec(Specs.BASE_REQ_SPEC)
                 .baseUri("http://localhost:" + wireMockExtension.getPort())
                 .when()
                 .patch("/user/20")
@@ -89,7 +90,7 @@ public class MockAndStabUserWireMockTests extends BaseTestApi {
 
         // Дёргаем стаб напрямую
         UserUpdate userResponse = RestAssured.given()
-                .spec(requestSpec)
+                .spec(Specs.BASE_REQ_SPEC)
                 .baseUri("http://localhost:" + wireMockExtension.getPort())
                 .when()
                 .patch("/user/20")

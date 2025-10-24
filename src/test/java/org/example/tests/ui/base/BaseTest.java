@@ -6,14 +6,14 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.example.common.driver.config.TestConfig;
 import org.example.tests.TrueBaseTest;
-import org.example.ui.web.common.PageProvider;
-import org.example.ui.web.common.steps.base.UserSteps;
+import org.example.ui.PageProvider;
+import org.example.ui.web.steps.base.UserSteps;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 
-public class BaseTest extends TrueBaseTest {
+public abstract class BaseTest extends TrueBaseTest {
 
     protected UserSteps user;
 

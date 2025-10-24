@@ -44,6 +44,7 @@ chromeoptions.args=--headless=new,--no-sandbox,--disable-dev-shm-usage,--disable
 
 selenide-allure-web-test-test-run
 
+cmd for appium inspector: appium --allow-cors
 
 ======================== TEST RUN ========================
 

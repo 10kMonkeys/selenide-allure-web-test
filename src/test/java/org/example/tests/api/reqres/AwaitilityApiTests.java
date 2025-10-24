@@ -4,21 +4,17 @@ import org.awaitility.Awaitility;
 import org.example.api.dto.user.UserDto;
 import org.example.api.dto.user.UserUpdate;
 import org.example.api.fixtures.UserFixtures;
-import org.example.api.steps.UserSteps;
 import org.example.common.utils.AsyncHelper;
 import org.example.tests.api.base.BaseTestApi;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.atomic.AtomicReference;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AwaitilityApiTests extends BaseTestApi {
-
-    private final UserSteps steps = new UserSteps(requestSpec);
 
     /*
     * Scenario:
@@ -29,13 +25,13 @@ public class AwaitilityApiTests extends BaseTestApi {
     public void awaitilityGetUserListTest() {
 
         UserDto user = UserFixtures.randomUser();
-        steps.putUserById(user, 1);
+        userClient.putUserById(user, 1);
 
         Awaitility.await()
                 .atMost(Duration.ofSeconds(10))
                 .pollInterval(Duration.ofMillis(500))
                 .untilAsserted(() -> {
-                    var getUserListResponse = steps.getUserList();
+                    var getUserListResponse = userClient.getUserList();
 
                     assertThat(getUserListResponse).isNotNull();
                     assertEquals(12, getUserListResponse.getTotal());
@@ -62,14 +58,14 @@ public class AwaitilityApiTests extends BaseTestApi {
         UserDto user = UserFixtures.randomUser();
 
         CompletableFuture<UserUpdate> reportFuture = AsyncHelper.runAsyncWithAwaitility(
-                () -> steps.putUserById(user, 1)
+                () -> userClient.putUserById(user, 1)
         );
 
-        var getUserListResponse = steps.getUserList();
+        var getUserListResponse = userClient.getUserList();
 
         reportFuture.join();
 
-        var getUserListResponse2 = steps.getUserList();
+        var getUserListResponse2 = userClient.getUserList();
     }
 
     /*
@@ -85,16 +81,16 @@ public class AwaitilityApiTests extends BaseTestApi {
         UserDto user = UserFixtures.randomUser();
 
         CompletableFuture<UserUpdate> reportFuture = AsyncHelper.runAsyncWithAwaitility(
-                () -> steps.putUserById(user, 1), // действие, возвращающее объект
+                () -> userClient.putUserById(user, 1), // действие, возвращающее объект
                 Duration.ofSeconds(10), // таймаут
                 Duration.ofMillis(500)  // интервал опроса
         );
 
-        var getUserListResponse = steps.getUserList();
+        var getUserListResponse = userClient.getUserList();
 
         UserUpdate newUser = reportFuture.join();
 
-        var getUserListResponse2 = steps.getUserList();
+        var getUserListResponse2 = userClient.getUserList();
 
         assertThat(user.getId()).isEqualTo(newUser.getId());
         assertThat(user.getEmail()).isEqualTo(newUser.getEmail());

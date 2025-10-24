@@ -4,7 +4,6 @@ import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.example.api.dto.user.UserDto;
 import org.example.api.fixtures.UserFixtures;
-import org.example.api.steps.UserSteps;
 import org.example.tests.api.base.BaseTestApi;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Order;
@@ -24,14 +23,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(SoftAssertionsExtension.class)
 public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignoreUnknown = true) --- ignore fields
 
-    private final UserSteps steps = new UserSteps(requestSpec);
-
     @Test
     @Order(1)
 //    @RetryingTest(3) // TODO JUnit Pioneer
     public void verifyGetUserListTest() {
 
-        var getUserListResponse = steps.getUserList();
+        var getUserListResponse = userClient.getUserList();
         
         assertThat(getUserListResponse).isNotNull();
         assertEquals(12, getUserListResponse.getTotal());
@@ -48,7 +45,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
     @Test
     @Order(3)
     public void verifyGetUserByIdTest() {
-        var getUserByIdResponse = steps.getUserById(1);
+        var getUserByIdResponse = userClient.getUserById(1);
 
         assertThat(getUserByIdResponse).isNotNull();
         assertEquals(1, getUserByIdResponse.getId());
@@ -76,7 +73,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
 
         UserDto user4 = Instancio.create(UserDto.class); // instancio for random generation
 //
-        var putUserByIdResponse = steps.putUserById(user5, 1);
+        var putUserByIdResponse = userClient.putUserById(user5, 1);
 
 //        SoftAssertions assertions = new SoftAssertions(); // no needed
 
@@ -103,7 +100,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
     public void verifyPatchUserByIdTest() {
         UserDto user = new UserDto(1);
 
-        var patchUserByIdResponse = steps.patchUserById(user, 1);
+        var patchUserByIdResponse = userClient.patchUserById(user, 1);
 
         assertEquals(1, patchUserByIdResponse.getId());
         assertEquals(user.getEmail(), patchUserByIdResponse.getEmail());
@@ -116,7 +113,7 @@ public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignor
     @Test
     @Order(5)
     public void verifyDeleteUserByIdTest() {
-        var deleteUserByIdResponse = steps.deleteUserById(1);
+        var deleteUserByIdResponse = userClient.deleteUserById(1);
 
         assertThat(deleteUserByIdResponse).isNotNull();
     }

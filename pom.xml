@@ -20,6 +20,7 @@
         <appium.version>10.0.0</appium.version>
         <selenide.version>7.10.1</selenide.version>
         <jupiter.version>5.10.3</jupiter.version>
+        <browserstack.version>1.42.2</browserstack.version>
     </properties>
 
     <dependencies>
@@ -82,7 +83,7 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-java-commons</artifactId>
             <version>${allure.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -91,18 +92,12 @@
             <scope>compile</scope>
         </dependency>
         <!-- API -->
-<!--        <dependency>-->
-<!--            <groupId>io.rest-assured</groupId>-->
-<!--            <artifactId>rest-assured</artifactId>-->
-<!--            <version>${assured.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-                <dependency>
-                    <groupId>io.rest-assured</groupId>
-                    <artifactId>rest-assured</artifactId>
-                    <version>${assured.version}</version>
-                    <scope>compile</scope>
-                </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${assured.version}</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility</artifactId>
@@ -150,29 +145,17 @@
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
             <version>${appium.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.appium</groupId>
-            <artifactId>java-client</artifactId>
-            <version>10.0.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.browserstack</groupId>
             <artifactId>browserstack-java-sdk</artifactId>
-            <version>LATEST</version>
+            <version>${browserstack.version}</version>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-java-commons</artifactId>
-            <version>2.29.0</version>
-            <scope>compile</scope>
+            <version>2.5</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -184,6 +167,18 @@
             <artifactId>junit-jupiter-params</artifactId>
             <version>${jupiter.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>5.5.6</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.erosb/everit-json-schema -->
+        <dependency>
+            <groupId>com.github.erosb</groupId>
+            <artifactId>everit-json-schema</artifactId>
+            <version>1.14.6</version>
         </dependency>
     </dependencies>
 

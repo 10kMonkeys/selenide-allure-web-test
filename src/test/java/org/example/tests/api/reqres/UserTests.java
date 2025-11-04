@@ -1,18 +1,18 @@
 package org.example.tests.api.reqres;
 
+import io.github.artsok.ParameterizedRepeatedIfExceptionsTest;
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.example.api.dto.user.UserDto;
 import org.example.api.fixtures.UserFixtures;
 import org.example.tests.api.base.BaseTestApi;
 import org.instancio.Instancio;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junitpioneer.jupiter.RetryingTest;
 
 import java.util.stream.Stream;
 
@@ -23,9 +23,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(SoftAssertionsExtension.class)
 public class UserTests extends BaseTestApi { // TODO @JsonIgnoreProperties(ignoreUnknown = true) --- ignore fields
 
-    @Test
+//    @Test
     @Order(1)
 //    @RetryingTest(3) // TODO JUnit Pioneer
+    @RepeatedTest(value = 3, name = "Repetition {currentRepetition} of {totalRepetitions}")
     public void verifyGetUserListTest() {
 
         var getUserListResponse = userClient.getUserList();

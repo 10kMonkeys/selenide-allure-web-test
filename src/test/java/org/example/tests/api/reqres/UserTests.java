@@ -1,6 +1,4 @@
 package org.example.tests.api.reqres;
-
-import io.github.artsok.ParameterizedRepeatedIfExceptionsTest;
 import org.assertj.core.api.SoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.example.api.dto.user.UserDto;
@@ -12,8 +10,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junitpioneer.jupiter.RetryingTest;
-
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;

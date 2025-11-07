@@ -7,4 +7,5 @@ public class DateAndTimeFormat {
     public static final String MMM = "MMM";
     public static final String YYYY =  "yyyy";
     public static final String DD =  "dd";
+    public static final String D =  "d";
 }

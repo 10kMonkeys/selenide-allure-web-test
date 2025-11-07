@@ -1,4 +1,5 @@
 # Базовый образ: Maven + Java 21 + Ubuntu (jammy = 22.04)
+# maven:3.9-eclipse-temurin-21-alpine
 FROM maven:3.9.9-eclipse-temurin-21-jammy
 
 # Установка зависимостей для UI тестов

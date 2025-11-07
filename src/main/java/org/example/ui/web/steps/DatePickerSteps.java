@@ -29,7 +29,7 @@ public class DatePickerSteps {
         clickOnSelectYearSwitch();
         selectCertainYear(date, DateAndTimeFormat.YYYY);
         selectCertainMonth(date, DateAndTimeFormat.MMM);
-        selectCertainDay(date, DateAndTimeFormat.DD);
+        selectCertainDay(date, DateAndTimeFormat.D);
     }
 
     @Step

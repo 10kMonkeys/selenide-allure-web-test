@@ -19,7 +19,7 @@ import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMoc
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@Tag("apiTest")
+@Tag("mockTest")
 //@WireMockTest // @WireMockTest(httpPort = 8089)
 public class MockAndStabUserWireMockTests extends BaseTestApi {
 

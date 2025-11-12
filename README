@@ -67,3 +67,46 @@ mvn clean test "-Dgroups=one, two" "-Dplatform=mobile_web" "-Denv=local" "-Dos=a
 
 ################ MOBILE WEB LOCAL ################
 mvn clean test "-Dgroups=one, two" "-Dplatform=mobile_native" "-Denv=local" "-Dos=android" "-Ddevice=pixel_9_pro"
+
+
+===================== NEW DOCKER SELENOID =======================
+docker compose build --no-cache test-run  -> build via docker-compose.yaml, not directly based on dockerfile
+docker compose up test-run -d
+
+################ for ci ################
+docker compose up -d
+docker-compose run --rm test-run mvn test "-Dgroups=docker" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
+
+
+################ for local develop ################
+docker compose up -d --build
+docker-compose run -d test-run tail -f /dev/null
+docker-compose exec test-run mvn test "-Dgroups=one, two, apiTests" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=firefox"
+
+***********************************
+
+new docker compose
+
+ docker compose build --no-cache
+ docker compose up -d selenoid selenoid-ui
+ docker-compose run --rm test-run mvn test "-Dgroups=one, two, api" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
+
+or just
+
+docker-compose run --rm test-run mvn test "-Dgroups=one, two, api" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
+
+new allure
+
+- remove old tests html files in allure-results + remove allure-report folder
+mvn test "-Dgroups=one, two" "-Denv=local" "-Dplatform=web" "-Dselenide.browser=chrome"
+allure generate target/allure-results OR allure generate target/allure-results -o target/allure-report
+- move history folder from allure-report to allure-results
+allure serve target/allure-results
+
+
+
+System.out.println("=== DOCKER CHECK ===");
+System.out.println("HOSTNAME: " + System.getenv("HOSTNAME"));
+System.out.println("PWD: " + System.getProperty("user.dir"));
+System.out.println("OS: " + System.getProperty("os.name"));
+System.out.println("=== END DOCKER CHECK ===");

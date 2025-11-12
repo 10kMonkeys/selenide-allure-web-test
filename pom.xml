@@ -195,6 +195,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
+
 <!--                    <forkCount>2</forkCount>-->
 <!--                    <reuseForks>true</reuseForks>-->
 <!--                    <parallel>classes</parallel>-->

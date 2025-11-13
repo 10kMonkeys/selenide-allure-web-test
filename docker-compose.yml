@@ -36,7 +36,7 @@ services:
     container_name: tests
     working_dir: /app
     volumes:
-      - ./:/app
+      - ./:/app # шарит все в корень проекта
     depends_on:
       selenoid:
         condition: service_started

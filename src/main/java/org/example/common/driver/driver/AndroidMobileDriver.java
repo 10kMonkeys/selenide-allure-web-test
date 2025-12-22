@@ -19,6 +19,9 @@ public class AndroidMobileDriver implements WebDriverProvider  {
         options.setCapability("resetKeyboard", true);
         options.setCapability("autoGrantPermissions", true);
 
+
+        options.setCapability("appium:udid", "emulator-5556"); // emulator-5556 // deviceName for iOS
+
         try {
             return new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         } catch (MalformedURLException e) {

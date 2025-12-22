@@ -30,6 +30,7 @@ public class MobileNativePlatformFactory extends BaseMobilePlatformFactory {
             options.setCapability("appium:app", TestConfig.getAndroidAppPath());
         } else {
             options.setCapability("appium:app", TestConfig.getIosAppPath());
+//            options.setCapability("appium:app", "app:file-1764773371797.apk");
         }
     }
 }

@@ -50,8 +50,8 @@ cmd for appium inspector: appium --allow-cors
 
 ################ APPIUM ################
 
-appium --keep-alive-timeout 800 --use-plugins=device-farm --base-path /wd/hub /wd/hub --plugin-device-farm-platform=android --allow-insecure=*:adb_shell
-appium --ka 800 --use-plugins=device-farm --pa /wd/hub /wd/hub --plugin-device-farm-platform=android --allow-insecure=*:adb_shell
+appium server --keep-alive-timeout 800 --use-plugins=device-farm --base-path /wd/hub --plugin-device-farm-platform=android --allow-insecure=*:adb_shell
+appium --ka 800 --use-plugins=device-farm --pa /wd/hub --plugin-device-farm-platform=android --allow-insecure=*:adb_shell
 
 ################ WEB LOCAL ################
 mvn clean test "-Dgroups=one, two" "-Dplatform=web" "-Dbrowser=firefox"
@@ -75,13 +75,13 @@ docker compose up test-run -d
 
 ################ for ci ################
 docker compose up -d
-docker-compose run --rm test-run mvn test "-Dgroups=docker" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
+docker-compose run --rm test-run mvn clean test "-Dgroups=docker" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
 
 
 ################ for local develop ################
 docker compose up -d --build
 docker-compose run -d test-run tail -f /dev/null
-docker-compose exec test-run mvn test "-Dgroups=one, two, apiTests" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=firefox"
+docker-compose exec test-run mvn clean test "-Dgroups=one, two, apiTests" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=firefox"
 
 ***********************************
 
@@ -89,11 +89,11 @@ new docker compose
 
  docker compose build --no-cache
  docker compose up -d selenoid selenoid-ui
- docker-compose run --rm test-run mvn test "-Dgroups=one, two, api" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
+ docker-compose run --rm test-run mvn clean test "-Dgroups=one, two, api" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
 
 or just
 
-docker-compose run --rm test-run mvn test "-Dgroups=one, two, api" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
+docker-compose run --rm test-run mvn clean test "-Dgroups=one, two, api" "-Denv=docker" "-Dplatform=web" "-Dselenide.browser=chrome"
 
 new allure
 

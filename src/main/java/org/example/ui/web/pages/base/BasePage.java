@@ -26,6 +26,4 @@ public abstract class BasePage {
     protected void waitUntilElementListVisible(ElementsCollection list, long timeout) {
         list.get(0).shouldBe(visible, Duration.ofSeconds(timeout));
     }
-
-
 }

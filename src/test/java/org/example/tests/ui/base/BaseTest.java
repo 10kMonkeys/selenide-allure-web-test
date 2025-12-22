@@ -20,6 +20,7 @@ public abstract class BaseTest extends TrueBaseTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = TestConfig.BASE_URL;
+        Configuration.pageLoadTimeout = 10000;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
                 .savePageSource(false)

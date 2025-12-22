@@ -12,7 +12,7 @@ import io.restassured.specification.ResponseSpecification;
 public class Specs {
 
     public static final RequestSpecification BASE_REQ_SPEC = new RequestSpecBuilder()
-            .addQueryParam("api_key", "reqres-free-v1")
+            .addHeader("x-api-key", "reqres_542a1f1fd376463e9b040825fb702769")
             .addFilter(new AllureRestAssured())
             .addFilter(new RequestLoggingFilter()) // comment for CI
             .addFilter(new ResponseLoggingFilter()) // comment for CI

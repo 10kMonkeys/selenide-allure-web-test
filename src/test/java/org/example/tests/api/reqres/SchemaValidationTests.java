@@ -9,17 +9,22 @@ import org.example.api.dto.user.UserDto;
 import org.example.api.fixtures.UserFixtures;
 import org.example.tests.api.base.BaseTestApi;
 import org.json.JSONObject;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SchemaValidationTests extends BaseTestApi {
 
     private final ObjectMapper mapper = new ObjectMapper();
 
+    @Order(1)
     @Test
     @SneakyThrows
     public void getUserByIdResponseSchemaTest() {
@@ -33,6 +38,7 @@ public class SchemaValidationTests extends BaseTestApi {
     }
 
     @Test
+    @Order(2)
     @SneakyThrows
     public void putUserRequestSchemaTestOne() { // JsonSchemaValidator
         UserDto user = UserFixtures.randomUser();
@@ -45,6 +51,7 @@ public class SchemaValidationTests extends BaseTestApi {
     }
 
     @Test
+    @Order(3)
     public void putUserRequestSchemaTestTwo() throws IOException { // Everit
         UserDto user = UserFixtures.randomUser();
 

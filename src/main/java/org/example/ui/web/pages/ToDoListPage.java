@@ -3,7 +3,6 @@ package org.example.ui.web.pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.example.ui.web.pages.base.BasePage;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
@@ -14,7 +13,7 @@ public class ToDoListPage extends BasePage {
     private final SelenideElement addNewToDoField = $(byXpath("//input[@placeholder='Add new todo']"));
 
     public ElementsCollection getToDoList() {
-        waitUntilElementListVisible(toDoList, 4);
+        waitUntilElementListVisible(toDoList, 4); // default value is from timeout property
         return toDoList;
     }
 
